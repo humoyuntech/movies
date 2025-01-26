@@ -8,7 +8,8 @@ import ActorDetail from './pages/ActorDetail';
 import { MOVIE_LISTS, TOP_LISTS } from '../constants';
 import MoviesListTop from "./pages/MoviesListTop";
 import MoviesListMain from "./pages/MoviesListMain";
-
+import { Provider } from 'react-redux'
+import { store } from '../app/store';
 function App() {
  const router = createBrowserRouter([
   {
@@ -40,9 +41,9 @@ function App() {
  ])
 
   return (
-    <>
+    <Provider store={store}>
       <RouterProvider router={router}/>
-    </>
+    </Provider>
   )
 }
 

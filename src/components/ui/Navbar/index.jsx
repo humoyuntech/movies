@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import {Link, AppBar, Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, Toolbar, Typography, useScrollTrigger, Divider } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
-import MovieIcon from '@mui/icons-material/Movie';
+
 import { Link as RouterLink} from "react-router-dom";
 
 import {iconComponents, MOVIE_LISTS, TOP_LISTS } from "../../../constants";
@@ -28,7 +29,7 @@ function Navbar() {
             <Container maxWidth="lg">
                 <Toolbar>
                 <IconButton onClick={handleDrawerToggle}>
-                    <MenuIcon />
+                    <MenuIcon sx={{color: 'white'}} />
                 </IconButton>
 
                 <Drawer open={isOpen} onClose={handleDrawerToggle}>
