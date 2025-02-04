@@ -10,6 +10,7 @@ import MoviesListTop from "./pages/MoviesListTop";
 import MoviesListMain from "./pages/MoviesListMain";
 import { Provider } from 'react-redux'
 import { store } from '../app/store';
+
 function App() {
  const router = createBrowserRouter([
   {

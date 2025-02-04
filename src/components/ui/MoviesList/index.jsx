@@ -1,21 +1,26 @@
-import { Stack, Typography } from "@mui/material"
-import { Link } from "react-router-dom"
+/* eslint-disable react/prop-types */
+import { Pagination, Stack} from "@mui/material"
+import MovieCard from "../MovieCard";
 
 
 function MoviesList({movies, totalPages, page, setPage}) {
   return (
     <>
-        <Stack>
+        <Stack direction="row" justifyContent="center" flexWrap="wrap">
             {movies.map(movie => (
-                <Stack>
-                    <Link to={`/movie/${movie.kinopoiskId}`}>
-                        <img src={movie.posterUrlPreview} alt={movie.nameRu}/>
-                    </Link>
-                    <Typography>
-                        {movie.nameRu ? movie.nameRu : movie.nameEn}
-                    </Typography>
-                </Stack>
+                <MovieCard key={movie.kinopoiskId} movie={movie}/>
             ))}
+        </Stack>
+        <Stack alignItems="center">
+        <Pagination
+          count={totalPages}
+          color="primary"
+          variant="outlined"
+          shape="rounded"
+          size="large"
+          page={page}
+          onChange={(_, value) => setPage(value)}
+        />
         </Stack>
     </>
   );
