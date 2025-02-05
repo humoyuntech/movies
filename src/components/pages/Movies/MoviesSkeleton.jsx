@@ -30,5 +30,3 @@ export default function MoviesSkeleton() {
     </Box>
   );
 }
-
-// 3:35:09.

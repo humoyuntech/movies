@@ -6,6 +6,8 @@ import {Navigate, useLocation, useNavigate} from 'react-router-dom';
 import { Button, Stack, Typography } from "@mui/material";
 import MoviesList from "../../ui/MoviesList";
 import { ArrowBack } from "@mui/icons-material";
+import ErrorMessage from "../../ui/ErrorMessage/index.jsx";
+import MoviesListTopSkeleton from './MoviesListTopSkeleton';
 
 function MoviesListTop() {
   const location = useLocation()
@@ -22,9 +24,9 @@ function MoviesListTop() {
     setPage(1);
   },[location])
   
-  if(error) return <p>Some error</p>
+  if(error) return <ErrorMessage />
 
-  if(isLoading) return <p>Loding...</p>
+  if (isLoading) return <MoviesListTopSkeleton />;
   
   return (
     <>
