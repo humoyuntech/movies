@@ -13,6 +13,7 @@ import ErrorMessage from '../../ui/ErrorMessage';
 import MoviesList from '../../ui/MoviesList';
 // import SelectMovies from '../../ui/SelectMovies';
 import MoviesListMainSkeleton from './MoviesListMainSkeleton';
+import SelectMovies from '../../ui/SelectMovies';
 
 export default function MoviesListMain() {
   const location = useLocation();
@@ -40,7 +41,7 @@ export default function MoviesListMain() {
     setPage(1);
   }, [location]);
 
-  if (responseFilms.error && responseGenresAndCountries.error)
+  if (responseFilms.error || responseGenresAndCountries.error)
     return <ErrorMessage />;
 
   if (responseFilms.isLoading || responseGenresAndCountries.isLoading)
@@ -52,14 +53,14 @@ export default function MoviesListMain() {
         <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} />
         <Typography variant="h4">{movieType.title}</Typography>
       </Stack>
-      {/* <SelectMovies
+      <SelectMovies
         countriesList={responseGenresAndCountries.data.countries}
         genresList={responseGenresAndCountries.data.genres}
         countries={countries}
         order={order}
         year={year}
         genreId={genreId}
-      /> */}
+      />
       <MoviesList
         movies={responseFilms.data.items}
         totalPages={responseFilms.data.totalPages}
@@ -70,4 +71,3 @@ export default function MoviesListMain() {
   );
 }
 
-// 4:02:50
