@@ -1,9 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { ArrowBack, Language, Movie } from '@mui/icons-material';
 import {Box, Button, ButtonGroup, CircularProgress, Link, Stack, Typography, Grid} from '@mui/material';
-// import Grid from '@mui/material/Grid';
-
-
 import React from 'react';
 import {Link as ReactRouter, useNavigate, useParams} from 'react-router-dom';
 

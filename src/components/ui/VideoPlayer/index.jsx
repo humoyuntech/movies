@@ -24,3 +24,5 @@ export default function VideoPlayer() {
     ></div>
   );
 }
+
+// https://pleer.videoplayers.club/player/getcode?t=replace
