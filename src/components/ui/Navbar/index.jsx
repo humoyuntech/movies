@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
-import {Link, AppBar, Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, Toolbar, Typography, useScrollTrigger, Divider } from "@mui/material";
+import {Link, AppBar, Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Slide, Toolbar, Typography, useScrollTrigger, Divider, Stack } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { Link as RouterLink} from "react-router-dom";
 
 import {iconComponents, MOVIE_LISTS, TOP_LISTS } from "../../../constants";
+import Search from "../Search";
 
 const Icon =({iconName}) => {
     const IconComponent = iconComponents[iconName];
@@ -65,9 +66,12 @@ function Navbar() {
                         </List>
                     </Box>
                 </Drawer>
-                <Typography sx={{color: 'white', textDecoration: 'nono'}} variant="h5" component={RouterLink} to="/">
-                    Humoflix
-                </Typography>
+                <Stack flexDirection="row" justifyContent="space-between" alignItems="center" width="100%">
+                    <Typography sx={{color: 'white', textDecoration: 'nono'}} variant="h5" component={RouterLink} to="/">
+                        Humoflix
+                    </Typography>
+                    <Search />
+                </Stack>
                 </Toolbar>
             </Container>
         </AppBar>
@@ -76,3 +80,5 @@ function Navbar() {
 }
 
 export default Navbar
+
+// 6:37:13
