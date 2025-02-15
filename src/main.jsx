@@ -9,13 +9,13 @@ import App from './components/App.jsx';
 
 import 'bear-react-carousel/dist/index.css';
 
-// import ToggleColorMode from './context/ToggleColorMode.jsx';
+import ToggleColorMode from './context/ToggleColorMode.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    {/* <ToggleColorMode> */}
+    <ToggleColorMode>
       <CssBaseline />
       <App />
-    {/* </ToggleColorMode> */}
+    </ToggleColorMode>
   </Provider>,
 );
